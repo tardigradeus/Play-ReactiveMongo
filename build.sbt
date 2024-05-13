@@ -112,7 +112,7 @@ lazy val reactivemongo = Project("Play2-ReactiveMongo", file(".")).settings(
             .cross(CrossVersion.binary)
             .exclude("com.typesafe.akka", "*") // provided by Play
         } else {
-          ("org.reactivemongo" %% "reactivemongo-pekkostream" % buildVer)
+          ("org.reactivemongo" %% "reactivemongo-pekkostream" % s"$buildVer-SNAPSHOT")
             .cross(CrossVersion.binary)
             .exclude("org.apache.pekko", "*") // provided by Play
         }

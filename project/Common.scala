@@ -38,7 +38,7 @@ object Common extends AutoPlugin {
       }
     },
     version ~= { ver =>
-      val suffix = sys.env.getOrElse("RELEASE_SUFFIX", "")
+      val suffix = "play29"
 
       if (suffix.isEmpty) {
         ver
@@ -50,7 +50,7 @@ object Common extends AutoPlugin {
         }
       }
     },
-    scalaVersion := "2.12.17",
+    scalaVersion := "2.13.11",
     crossScalaVersions := Seq(
       "2.11.12",
       scalaVersion.value,
@@ -91,10 +91,7 @@ object Common extends AutoPlugin {
   lazy val playUpper = "2.8.21"
 
   lazy val playVer = Def.setting[String] {
-    sys.env.get("PLAY_VERSION").getOrElse {
-      if (scalaBinaryVersion.value == "2.11") playLower
-      else playUpper
-    }
+    "3.0.2"
   }
 
   private lazy val playDir = Def.setting[String] {
